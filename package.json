@@ -1,0 +1,17 @@
+{
+  "name": "gitactioncicd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

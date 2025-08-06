@@ -1,0 +1,21 @@
+{
+  "family": "git-action-task",
+  "executionRoleArn": "arn:aws:iam::593710896253:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "git-action-container",
+      "image": "593710896253.dkr.ecr.ap-northeast-2.amazonaws.com/gitactioncicd:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 3000,
+          "hostPort": 3000
+        }
+      ]
+    }
+  ],
+  "requiresCompatibilities": ["EC2"], // FARGATE (서버리스) -> 돈 많이 나감
+  "networkMode": "bridge", // awsvpc -> FARGATE 전용 네트워크
+  "cpu": "256",
+  "memory": "512"
+}

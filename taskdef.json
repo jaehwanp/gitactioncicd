@@ -15,8 +15,8 @@
       ]
     }
   ],
-  "requiresCompatibilities": ["EC2"], // FARGATE (서버리스) -> 돈 많이 나감
-  "networkMode": "bridge", // awsvpc -> FARGATE 전용 네트워크
+  "requiresCompatibilities": ["EC2"],
+  "networkMode": "bridge",
   "cpu": "256",
   "memory": "512"
 }

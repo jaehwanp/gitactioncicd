@@ -53,11 +53,6 @@ jobs:
           sed -i "s|<ECR_REPOSITORY>|$ECR_REPOSITORY|g" taskdef.json
           sed -i "s|<IMAGE_TAG>|$IMAGE_TAG|g" taskdef.json
 
-      - name: Show & validate taskdef.json
-        run: |
-          cat taskdef.json
-          jq -e . taskdef.json
-
       - name: Register new task definition
         id: register
         run: |

@@ -9,7 +9,7 @@ env:
   AWS_ACCOUNT_ID: 593710896253
   ECR_REPOSITORY: gitactioncicd
   ECS_CLUSTER: git-actions-ecs
-  ECS_SERVICE: git-actions-ecs-service
+  ECS_SERVICE: git-action-task-service-dum2ap9c
   CONTAINER_NAME: git-action-container
   IMAGE_TAG: ${{ github.sha }}
 
@@ -59,7 +59,7 @@ jobs:
           TD_ARN=$(aws ecs register-task-definition --cli-input-json file://taskdef.json --query 'taskDefinition.taskDefinitionArn' --output text)
           echo "TD_ARN=$TD_ARN" >> $GITHUB_OUTPUT
 
-      - name: Update ECS service (rolling update)
+      - name: Update ECS service
         run: |
           aws ecs update-service \
             --cluster "$ECS_CLUSTER" \
